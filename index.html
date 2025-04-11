@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happy Birthday, Aditi! 🎉</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Quicksand', sans-serif;
+      background: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    h1 {
+      font-family: 'Pacifico', cursive;
+      font-size: 3em;
+      text-align: center;
+      margin-top: 30px;
+      animation: bounce 1s 2s infinite alternate;
+    }
+
+    .message {
+      font-size: 1.5em;
+      margin: 20px auto;
+      text-align: center;
+      max-width: 700px;
+      padding: 10px;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 20px;
+      backdrop-filter: blur(8px);
+      animation: fadeIn 2s ease-out;
+    }
+
+    .slideshow-container {
+      position: relative;
+      width: 100%;
+      height: 80vh;
+      max-height: 700px;
+      margin: 30px auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 20px;
+    }
+
+    .slide {
+      position: absolute;
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      transition: opacity 1s ease-in-out;
+      opacity: 0;
+    }
+
+    .slide.active {
+      opacity: 1;
+      z-index: 2;
+    }
+
+    .footer {
+      margin: 30px 0;
+      font-size: 1.2em;
+      text-align: center;
+    }
+
+    .heart {
+      animation: pulse 1s infinite;
+      display: inline-block;
+      color: red;
+    }
+
+    .surprise-button {
+      background: #fff;
+      color: #f67;
+      border: none;
+      padding: 10px 20px;
+      font-size: 1.2em;
+      border-radius: 20px;
+      cursor: pointer;
+      display: block;
+      margin: 20px auto;
+      transition: background 0.3s ease;
+    }
+
+    .surprise-button:hover {
+      background: #ffe4e1;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+      100% { transform: scale(1); }
+    }
+
+    @keyframes bounce {
+      from { transform: translateY(0); }
+      to { transform: translateY(-10px); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Floating Hearts */
+    .heart-float {
+      position: fixed;
+      top: 0;
+      left: 50%;
+      width: 20px;
+      height: 20px;
+      background-color: red;
+      transform: rotate(45deg);
+      animation: floatHeart 10s linear infinite;
+      opacity: 0.7;
+      border-radius: 50%;
+    }
+
+    .heart-float::before, .heart-float::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-color: red;
+      border-radius: 50%;
+    }
+
+    .heart-float::before {
+      top: -10px;
+      left: 0;
+    }
+
+    .heart-float::after {
+      top: 0;
+      left: -10px;
+    }
+
+    @keyframes floatHeart {
+      0% {
+        transform: translateY(100vh) rotate(45deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-10vh) rotate(45deg);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🎂 Happy Birthday, Aditi! 🎂</h1>
+  <div class="message">
+    From <strong>Vaish</strong> to her favorite human 💖<br/>
+    Here's a little gift filled with memories and love just for you!
+  </div>
+
+  <div class="slideshow-container">
+    <img class="slide active" src="images/img1.jpg" alt="Slide 1">
+    <img class="slide" src="images/img2.jpg" alt="Slide 2">
+    <img class="slide" src="images/img3.jpg" alt="Slide 3">
+    <img class="slide" src="images/img4.jpg" alt="Slide 4">
+    <img class="slide" src="images/img5.jpg" alt="Slide 5">
+    <img class="slide" src="images/img6.jpg" alt="Slide 6">
+    <img class="slide" src="images/img7.jpg" alt="Slide 7">
+    <img class="slide" src="images/img8.jpg" alt="Slide 8">
+    <img class="slide" src="images/img9.jpg" alt="Slide 9">
+    <img class="slide" src="images/img10.jpg" alt="Slide 10">
+    <img class="slide" src="images/img11.jpg" alt="Slide 11">
+    <img class="slide" src="images/img12.jpg" alt="Slide 12">
+    <img class="slide" src="images/img13.jpg" alt="Slide 13">
+    <img class="slide" src="images/img14.jpg" alt="Slide 14">
+    <img class="slide" src="images/img15.jpg" alt="Slide 15">
+    <img class="slide" src="images/img16.jpg" alt="Slide 16">
+    <img class="slide" src="images/img17.jpg" alt="Slide 17">
+    <img class="slide" src="images/img18.jpg" alt="Slide 18">
+    <img class="slide" src="images/img19.jpg" alt="Slide 19">
+    <img class="slide" src="images/img20.jpg" alt="Slide 20">
+    <img class="slide" src="images/img21.jpg" alt="Slide 21">
+    <img class="slide" src="images/img22.jpg" alt="Slide 22">
+    <img class="slide" src="images/img23.jpg" alt="Slide 23">
+    <img class="slide" src="images/img24.jpg" alt="Slide 24">
+    <img class="slide" src="images/img25.jpg" alt="Slide 25">
+    <img class="slide" src="images/img26.jpg" alt="Slide 26">
+  </div>
+
+
+  <button class="surprise-button" onclick="launchSurprise()">Click me for a surprise! 🎉</button>
+
+  <div class="footer">
+    Made with <span class="heart">❤</span> by Sharvin & Vaish
+  </div>
+
+  <!-- Floating Hearts -->
+  <script>
+    setInterval(() => {
+      const heart = document.createElement('div');
+      heart.classList.add('heart-float');
+      heart.style.left = Math.random() * 100 + 'vw';
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 10000);
+    }, 500);
+  </script>
+
+  <!-- Music Playlist -->
+  <audio id="bg-music" autoplay loop></audio>
+  <script>
+    const playlist = [
+      'music/track1.mp3',
+    ];
+    let currentTrack = 0;
+    const bgMusic = document.getElementById('bg-music');
+    bgMusic.src = playlist[currentTrack];
+    bgMusic.play();
+
+    bgMusic.addEventListener('ended', () => {
+      currentTrack = (currentTrack + 1) % playlist.length;
+      bgMusic.src = playlist[currentTrack];
+      bgMusic.play();
+    });
+  </script>
+
+  <!-- Slideshow Script -->
+  <script>
+    let slideIndex = 0;
+    const slides = document.querySelectorAll('.slide');
+    setInterval(() => {
+      slides[slideIndex].classList.remove('active');
+      slideIndex = (slideIndex + 1) % slides.length;
+      slides[slideIndex].classList.add('active');
+    }, 3000);
+  </script>
+
+  <!-- Confetti -->
+  <script>
+    function launchSurprise() {
+      const duration = 2 * 1000;
+      const end = Date.now() + duration;
+
+      (function frame() {
+        confetti({ particleCount: 7, angle: 60, spread: 70, origin: { x: 0 } });
+        confetti({ particleCount: 7, angle: 120, spread: 70, origin: { x: 1 } });
+        if (Date.now() < end) requestAnimationFrame(frame);
+      })();
+    }
+  </script>
+</body>
+</html>
