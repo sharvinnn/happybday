@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday, Bestie! 🎉</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@2.11.1/tsparticles.confetti.bundle.min.js"></script>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Quicksand', sans-serif;
+      background: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+      color: #fff;
+      text-align: center;
+      overflow-x: hidden;
+    }
+    h1 {
+      font-family: 'Pacifico', cursive;
+      font-size: 3em;
+      margin-top: 40px;
+      animation: fadeIn 2s ease-in-out, bounce 1s 2s infinite alternate;
+    }
+    .message {
+      font-size: 1.5em;
+      margin: 20px auto;
+      max-width: 700px;
+      padding: 10px;
+      background: rgba(255,255,255,0.2);
+      border-radius: 20px;
+      backdrop-filter: blur(8px);
+      animation: slideIn 2s ease-out;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+      padding: 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .gallery img {
+      width: 100%;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease;
+      animation: float 6s ease-in-out infinite;
+    }
+    .gallery img:hover {
+      transform: scale(1.1) rotate(2deg);
+    }
+    .footer {
+      margin: 30px 0;
+      font-size: 1.2em;
+      animation: fadeIn 3s ease-in-out;
+    }
+    .heart {
+      animation: pulse 1s infinite;
+      display: inline-block;
+      color: red;
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+      100% { transform: scale(1); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateX(-50px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0); }
+    }
+    @keyframes bounce {
+      from { transform: translateY(0); }
+      to { transform: translateY(-10px); }
+    }
+    .music-player {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(255,255,255,0.3);
+      padding: 10px;
+      border-radius: 15px;
+      backdrop-filter: blur(10px);
+    }
+    .surprise-button {
+      background: #fff;
+      color: #f67;
+      border: none;
+      padding: 10px 20px;
+      font-size: 1.2em;
+      border-radius: 20px;
+      cursor: pointer;
+      margin-top: 20px;
+      transition: background 0.3s ease;
+      animation: fadeIn 4s ease-in-out;
+    }
+    .surprise-button:hover {
+      background: #ffe4e1;
+    }
+  </style>
+</head>
+<body>
+  <h1>🎂 Happy Birthday, Bestie! 🎂</h1>
+  <div class="message">
+    From <strong>[Your Girlfriend's Name]</strong> to her favorite human 💖<br />
+    Here's a little website filled with memories and love just for you!
+  </div>
+  <div class="gallery">
+    <!-- Replace the src with actual image links -->
+    <img src="images/pic1.jpg" alt="Bestie Pic 1">
+    <img src="images/pic2.jpg" alt="Bestie Pic 2">
+    <img src="images/pic3.jpg" alt="Bestie Pic 3">
+    <img src="images/pic4.jpg" alt="Bestie Pic 4">
+  </div>
+  <button class="surprise-button" onclick="launchSurprise()">Click me for a surprise! 🎉</button>
+  <div class="footer">
+    Made with <span class="heart">❤</span> by [Your Name] & [Girlfriend's Name]
+  </div>
+
+  <!-- Music Player -->
+  <div class="music-player">
+    <audio controls autoplay loop>
+      <source src="music/happy-birthday.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+  </div>
+
+  <!-- Animation Scripts -->
+  <script>
+    window.addEventListener('load', () => {
+      confetti({ particleCount: 200, spread: 100, origin: { y: 0.6 } });
+      setTimeout(() => launchFireworks(), 3000);
+    });
+
+    function launchSurprise() {
+      const duration = 2 * 1000;
+      const end = Date.now() + duration;
+
+      (function frame() {
+        confetti({ particleCount: 7, angle: 60, spread: 70, origin: { x: 0 } });
+        confetti({ particleCount: 7, angle: 120, spread: 70, origin: { x: 1 } });
+        if (Date.now() < end) requestAnimationFrame(frame);
+      })();
+
+      launchFireworks();
+    }
+
+    function launchFireworks() {
+      const defaults = { spread: 360, ticks: 60, gravity: 0, decay: 0.94, startVelocity: 30 };
+
+      function fire(particleRatio, opts) {
+        confetti(Object.assign({}, defaults, opts, {
+          particleCount: Math.floor(200 * particleRatio)
+        }));
+      }
+
+      fire(0.25, { spread: 26, startVelocity: 55 });
+      fire(0.2, { spread: 60 });
+      fire(0.35, { spread: 100, decay: 0.91, scalar: 0.8 });
+      fire(0.1, { spread: 120, startVelocity: 25, decay: 0.92, scalar: 1.2 });
+      fire(0.1, { spread: 120, startVelocity: 45 });
+    }
+  </script>
+</body>
+</html>
